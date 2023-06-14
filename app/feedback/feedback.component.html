@@ -1,0 +1,54 @@
+<app-nav></app-nav>
+
+
+<h1 style="text-transform: uppercase;text-align: center;margin-top: 40px;"><b>welcome to feedback</b></h1>
+<div class="container">
+  <form name="form" (ngSubmit)="f.form.valid && onSubmit(f)" #f="ngForm" novalidate>
+    <div class="input-group mb-3" style="margin-top: 50px;">
+      <span class="input-group-text" id="basic-addon1">@</span>
+
+      <input type="text" name="Username" class="form-control" [(ngModel)]="model.Username" #Username="ngModel"
+        [ngClass]="{ 'is-invalid': f.submitted && Username.invalid }" placeholder="Username" required minlength="6">
+      <div *ngIf="f.submitted && Username.invalid" class="invalid-feedback">
+        <div *ngIf="Username.errors?.minlength">Username must contains 6 letters</div>
+        <div *ngIf="Username.errors?.required">Username is required</div>
+      </div>
+    </div>
+
+    <div class="mb-3 form-group" style="margin-top: 40px;">
+
+      <input type="text" name="Email" class="form-control" [(ngModel)]="model.Email" #Email="ngModel"
+        [ngClass]="{ 'is-invalid': f.submitted && Email.invalid }" required pattern="[a-z \_ \.]*@gmail.com" placeholder="name@example.com">
+      <div *ngIf="f.submitted && Email.invalid" class="invalid-feedback">
+        <div *ngIf="Email.errors?.required">Email required</div>
+        <div *ngIf="Email.errors?.email">Enter correct email adress</div>
+      </div>
+    </div>
+
+    <div class="mb-3 form-group" style="margin-top: 40px;">
+
+      <input type="text" name="Mobile" placeholder="Mobilenumber" class="form-control" [(ngModel)]="model.Mobile"
+        #Mobile="ngModel" [ngClass]="{ 'is-invalid': f.submitted && Mobile.invalid }" required minlength="10">
+      <div *ngIf="f.submitted && Mobile.invalid" class="invalid-feedback">
+        <div *ngIf="Mobile.errors?.required">Mobile number required</div>
+        <div *ngIf="Mobile.errors?.minlength">Password must be at least 10 characters</div>
+      </div>
+    </div>
+
+
+    <div class="input-group" style="margin-top: 40px;">
+
+      <textarea class="form-control" name="feedback" aria-label="With textarea" style="height: 100px;"
+        placeholder="feedback here" [(ngModel)]="model.feedback" #feedback="ngModel"
+        [ngClass]="{ 'is-invalid':f.submitted && feedback.invalid}" required minlength="15">
+      <div *ngIf="f.submitted && feedback.invalid" class="invalid-feedback">
+        <div *ngIf="feed.errors?.required">Mobile number required</div>
+      <div *ngIf=""feedback.errors?.minlength>enter some text atleast 15letters</div>
+</div>
+
+      </textarea>
+    </div>
+    <button class="btn btn-primary mr-1"
+      style="margin-top: 40px;margin-left: 500px;margin-bottom: 10px;">Submit</button>
+  </form>
+</div>

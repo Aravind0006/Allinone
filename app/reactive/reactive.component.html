@@ -1,0 +1,131 @@
+<app-nav></app-nav>
+
+<div class="card">
+  <div class="card-header" style="text-transform: capitalize;font-size: larger;text-align: center;">
+    <b>Reactive forms validation</b>
+  </div>
+  <div class="container">
+    <div class="card-body">
+      <form class="row needs-validation" name="form" [formGroup]="f">
+
+        <div class="row rt">
+          <div class="col-md-1">
+            <label>Title</label>
+            <div>
+              <select type="text" formControlName="title" class="form-control"
+                [ngClass]="{' is-invalid': submitted && f.controls['title'].invalid}" required="">
+                <option value=""></option>
+                <option value="mr">mr</option>
+                <option value="mrs">mrs</option>
+              </select>
+              <div *ngIf="submitted && f.controls['title'].invalid" class="invalid-feedback">
+                <div *ngIf="f.controls['title'].errors?.required" style="font-size: smaller;">Title Required</div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="form-group col-md-5">
+            <label>First Name</label>
+            <input type="text" formControlName="firstName" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.controls['firstName'].invalid }" required>
+            <div *ngIf="submitted && f.controls['firstName'].invalid" class="invalid-feedback">
+              <div *ngIf="f.controls['firstName'].errors?.required">First Name is required</div>
+            </div>
+          </div>
+
+
+          <div class="form-group col-md-5 ">
+            <label>Last name</label>
+            <input type="text" formControlName="lastName" class="form-control"
+              [ngClass]="{'is-invalid': submitted && f.controls['lastName'].invalid}" required>
+            <div *ngIf="submitted&&f.controls['lastName'].invalid" class="invalid-feedback">
+              <div *ngIf="f.controls['lastName'].errors?.required">Lastname required</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row rt">
+          <div class="col-md-3">
+            <label>Date of Birth</label>
+            <input type="date" formControlName="dob" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.controls['dob'].invalid }" required>
+            <div *ngIf="submitted && f.controls['dob'].invalid" class="invalid-feedback">
+              <div *ngIf="f.controls['dob'].errors?.required">Date of Birth is required</div>
+            </div>
+          </div>
+
+
+          <div class="col-md-3">
+            <label>State</label>
+            <select class="form-select" formControlName="state"
+              [ngClass]="{'is-invalid':submitted && f.controls['state'].invalid}" required>
+              <option value=""></option>
+              <option>Tamil Nadu</option>
+            </select>
+            <div *ngIf="submitted && f.controls['state'].invalid" class="invalid-feedback">
+              <div *ngIf="f.controls['state'].errors?.required">State required</div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <label>City</label>
+            <select class="form-control" formControlName="city" formControlName="city"
+              [ngClass]="{'is-invalid':submitted&&f.controls['city'].invalid}" required>
+              <option value=""></option>
+              <option>Chennai</option>
+              <option> Coimbatore</option>
+              <option>Madurai</option>
+              <option> Salem</option>
+              <option>Tiruppur</option>
+            </select>
+            <div *ngIf="submitted && f.controls['city'].invalid" class="invalid-feedback">
+              <div *ngIf="f.controls['city'].errors?.required">City required</div>
+            </div>
+          </div>
+
+
+          <div class="col-md-3">
+            <label>Zip</label>
+            <input type="text" class="form-control" formControlName="zip" 
+              [ngClass]="{'is-invalid': submitted &&f.controls['zip'].invalid }" required>
+            <div *ngIf="submitted && f.controls['zip'].invalid" class="invalid-feedback">
+              <div *ngIf="f.controls['zip'].errors?.required">zip required</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row rt">
+          <label>Gender</label>
+          <div class="form-check col">
+            <input type="radio" class="form-check-input" id="validationFormCheck2" name="radio-stacked" required>
+            <label class="form-check-label" for="validationFormCheck2">Male</label>
+          </div>
+          <div class="form-check mb-3 col">
+            <input type="radio" class="form-check-input" id="validationFormCheck3" name="radio-stacked" required>
+            <label class="form-check-label" for="validationFormCheck3">Female</label>
+            <div class="invalid-feedback">More example invalid feedback text</div>
+          </div>
+        </div>
+
+        <div class="col-12 rt">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" formControlName="agree"
+              [ngClass]=" {'is-invalid' :submitted && f.controls['agree'].invalid}" required>
+            <label>
+              Agree to terms and conditions
+            </label>
+            <div *ngIf="submitted && f.controls['city'].invalid" class="invalid-feedback">
+              <div *ngIf="f.controls['city'].errors?.required">Agreement required</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 rt">
+          <button class="btn btn-primary" type="submit" (click)="submit()">Submit form</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+

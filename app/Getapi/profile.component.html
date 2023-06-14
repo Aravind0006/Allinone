@@ -1,0 +1,30 @@
+
+
+<div class="card">
+     <div class="card-body">
+          <button type="button" class="btn btn-outline-success" routerLink="/signin">Add new user</button>
+     </div>
+   </div>
+
+
+
+   <table class="table table-striped">
+     <tr>
+          <th>employeeId</th>
+          <th>employeeName</th>
+          <th>mobile</th>
+          <th>userName</th>
+          <th>password</th>
+          <th>confirmPassword</th>
+     </tr>
+     <tr *ngFor="let x of EmpDatas" >
+          <td>{{x.employeeId}}</td>
+          <td>{{x.employeeName}}</td>
+          <td>{{x.mobile}}</td>
+          <td>{{x.userName}}</td>
+          <td>{{x.password}}</td>
+          <td>{{x.confirmPassword}}</td>
+         
+     </tr>
+
+   </table>

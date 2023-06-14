@@ -1,0 +1,67 @@
+<app-nav></app-nav>
+
+<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist" style="margin-left: 530px;margin-top: 10px;"></ul>
+   <div class="tab-content" id="pills-tabContent" >
+     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0" >
+          <div class="container cal" >
+            <input type="text" [value]="display"  class="text"  style="width: 100%;height: 80px; font-family: 'Times New Roman', Times, serif;text-align:right;padding-left: 0px;font-size: 35px;"><br>
+            
+            <div class=" text-center" >
+               <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+                    <button type="button" class="btn btn-outline-primary numb lft" style="font-size: 25px;" (click)="PressMod()">%</button>
+                    <button type="button" class="btn btn-outline-primary numb" style="font-size: 25px;" (click)="pressAC()"> </button>
+                    <button type="button" class="btn btn-outline-primary numb" style="font-size: 25px;" (click)="pressC()">C</button>
+                    <button type="button" class="btn btn-outline-primary numb" style="font-size: 25px;" (click)="pressback()" >⌫</button>
+                    
+               </div>
+             </div>
+             <div class="text-center">
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+                   <button type="button" class="btn btn-outline-primary numb lft" style="font-size: 25px;" (click)="PressOneByX()">¹/x</button>
+                   <button type="button" class="btn btn-outline-primary numb" style="font-size: 25px;" (click)="pressSquare()">x²</button>
+                   <button type="button" class="btn btn-outline-primary numb" style="font-size: 25px;" (click)="pressSroot()">²√x</button>
+                   <button type="button" class="btn btn-outline-primary numb" style="font-size: 25px;" (click)="pressDiv()">÷</button>
+                    
+              </div>
+            </div>
+             <div class=" text-center">
+               <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+                    <button type="button" class="btn btn-outline-primary numb lft" style="font-size: 25px;" (click)="Press7()">7</button>
+                    <button type="button" class="btn btn-outline-primary numb" style="font-size: 25px;" (click)="Press8()">8</button>
+                    <button type="button" class="btn btn-outline-primary numb" style="font-size: 25px;" (click)="press9()">9</button>
+                   <button type="button" class="btn btn-outline-primary numb"style="font-size: 30px;" (click)="pressMulti()">×</button>
+          
+               </div>
+             </div>
+             <div class=" text-center">
+               <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+                    <button type="button" class="btn btn-outline-primary numb lft" style="font-size: 25px;" (click)="press4()">4</button>
+                    <button type="button" class="btn btn-outline-primary numb" style="font-size: 25px;" (click)="press5()">5</button>
+                    <button type="button" class="btn btn-outline-primary numb" style="font-size: 25px;" (click)="press6()">6</button>
+                    <button type="button" class="btn btn-outline-primary numb" style="font-size: 25px;" (click)="pressSub()">-</button>
+                 </div>
+             </div>
+             <div class="text-center">
+               <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+                    <button type="button" class="btn btn-outline-primary numb lft" style="font-size: 25px;" (click)="press1()">1</button>
+                    <button type="button" class="btn btn-outline-primary numb" style="font-size: 25px;" (click)="press2()">2</button>
+                    <button type="button" class="btn btn-outline-primary numb" style="font-size: 25px;" (click)="press3()">3</button>
+                   <button type="button" class="btn btn-outline-primary numb" style="font-size: 25px;margin-bottom: 10px;" (click)="PressPlus()">+</button>
+                    
+               </div>
+             </div>
+
+             <div class="text-center">
+               <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+                    <button type="button" class="btn btn-outline-primary numb4 lft "style="font-size: 25px;" (click)="pressHalf()">⁺/₋</button>
+                    <button type="button" class="btn btn-outline-primary numb4" style="font-size: 25px;" (click)="press0()">0</button>
+                    <button type="button" class="btn btn-outline-primary numb4" style="font-size: 25px;" (click)="Dot()">.</button>
+                    <button type="button" class="btn btn-outline-primary numb4" style="font-size: 25px;" (click)="Calculate()">=</button>
+               </div>
+             </div>
+          </div></div>
+
+
+
+    
+
